@@ -25,8 +25,9 @@ public class PlayerController : MonoBehaviour
         float x = Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime;
         float z = Input.GetAxisRaw("Vertical") * speed * Time.deltaTime;
 
+        //transform.Rotate(transform.up, camara.transform.rotation.y - transform.rotation.y);
 
-        transform.Translate(x, 0.0f, z, camara.transform);
+        transform.Translate(x, 0f, z, camara.transform);
 
         Physics.gravity = planets[0].transform.position - transform.position;
         transform.rotation = Quaternion.FromToRotation(transform.up, -Physics.gravity) * transform.rotation;
